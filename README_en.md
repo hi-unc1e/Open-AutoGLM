@@ -1,5 +1,7 @@
 # Open-AutoGLM
 
+> **This repository is a fork of [zai-org/Open-AutoGLM](https://github.com/zai-org/Open-AutoGLM)** and tracks upstream. It adds a fast element-based driver and a click cache (`phone_agent/fast/`): UI reads drop from ~2.2 s to ~0.18 s, waits and taps target elements instead of coordinates, verified steps are replayed without calling the model, and shutter/payment buttons are guarded. See [docs/click-cache.md](docs/click-cache.md) (Chinese). Everything else is upstream as-is.
+
 [中文阅读.](./README.md)
 
 <div align="center">

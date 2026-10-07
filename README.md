@@ -1,5 +1,7 @@
 # Open-AutoGLM
 
+> **本仓库是 [zai-org/Open-AutoGLM](https://github.com/zai-org/Open-AutoGLM) 的 fork**，会定期同步上游更新。在上游基础上新增了**快速驱动与点击缓冲层**（`phone_agent/fast/`）：读界面从约 2.2 秒降到约 0.18 秒，支持按元素等待和点击，同一任务再次运行时可以直接回放已验证过的步骤、不再调用模型，并对快门、支付等危险按钮做了防护。详见 [docs/click-cache.md](docs/click-cache.md)。其余功能与上游一致，下文为上游原文。
+
 [Readme in English](README_en.md)
 
 <div align="center">
