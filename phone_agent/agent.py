@@ -140,9 +140,7 @@ class PhoneAgent:
         self._step_count += 1
 
         # Capture current screen state
-        device_factory = get_device_factory()
-        screenshot = device_factory.get_screenshot(self.agent_config.device_id)
-        current_app = device_factory.get_current_app(self.agent_config.device_id)
+        screenshot, current_app = self._capture_screen()
 
         # Build messages
         if is_first:
@@ -241,6 +239,13 @@ class PhoneAgent:
             thinking=response.thinking,
             message=result.message or action.get("message"),
         )
+
+    def _capture_screen(self):
+        """Screenshot and current app name; override to use a faster capture path."""
+        device_factory = get_device_factory()
+        screenshot = device_factory.get_screenshot(self.agent_config.device_id)
+        current_app = device_factory.get_current_app(self.agent_config.device_id)
+        return screenshot, current_app
 
     @property
     def context(self) -> list[dict[str, Any]]:
